@@ -17,7 +17,4 @@ class UserTaxInfo(models.Model):
     total_income = models.IntegerField()
     total_deductions = models.IntegerField()
     
-    def __str__(self):
-    	return self.total_income
-
-    	# this is the comment added to model
+    
