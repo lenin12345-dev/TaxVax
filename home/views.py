@@ -5,3 +5,6 @@ from django.http import HttpResponse
 # this is the comment added on windows
 def index(request):
     return HttpResponse('hello world')
+# this is a simple comment added to views
+def user_list(request):
+	return

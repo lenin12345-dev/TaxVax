@@ -19,3 +19,5 @@ class UserTaxInfo(models.Model):
     
     def __str__(self):
     	return self.total_income
+
+    	# this is the comment added to model
