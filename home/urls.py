@@ -19,5 +19,6 @@ from .import views
 urlpatterns = [
     url(r'^$',views.index,name='index'),
     url(r'^userlist/$', views.display_user_list,name='display_user_list'),
+    url(r'^userlist/(?P<user_id>[0-9]+)/$',views.display_user_details, name='display_user_details')
 
 ]

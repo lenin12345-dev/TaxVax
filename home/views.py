@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse
-from .models import UserBio
+from .models import UserBio, UserTaxInfo
 # Create your views here.
 # this is the new comment added from mac lets see if it works
 # this is the comment added on windows
@@ -17,3 +17,11 @@ def display_user_list(request):
 
 	return HttpResponse(template.render(context,request))
 	
+def display_user_details(request, user_id):
+	user_detail = UserTaxInfo.objects.get(pk=user_id)
+	context ={
+		'user_detail': user_detail,
+	}
+	template = loader.get_template('home/user_detail.html')
+	return HttpResponse(template.render(context,request))
+
