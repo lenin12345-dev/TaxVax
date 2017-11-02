@@ -16,9 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from .import views
+
+app_name= 'home'
+
 urlpatterns = [
-    url(r'^$',views.index,name='index'),
-    url(r'^userlist/$', views.display_user_list,name='display_user_list'),
-    url(r'^userlist/(?P<user_id>[0-9]+)/$',views.display_user_details, name='display_user_details')
+    url(r'^$',views.IndexView.as_view(),name='index'),
+    url(r'^userlist/$', views.UserList.as_view(),name='display_user_list'),
+    url(r'^userlist/(?P<pk>[0-9]+)/$',views.UserDetail.as_view(), name='display_user_details'),
+    url(r'^client/add/$', views.ClientCreate.as_view(), name='client-create'),
 
 ]
