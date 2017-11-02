@@ -1,4 +1,12 @@
-{% if user_list %}
+{% extends 'home/base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This is the user list page</title>
+</head>
+<body>
+	{% block body %}
+	{% if user_list %}
 	{% for user in user_list %}
 	<!--
 
@@ -7,3 +15,7 @@
 	<li><a href="/index/userlist/{{user.id}}">{{ user.username }}</a></li>
 	{% endfor %}
 {% endif %}
+	{% endblock %}
+</body>
+</html>
+

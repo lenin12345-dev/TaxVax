@@ -10,8 +10,9 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
 # not working fine
-class IndexView(generic.ListView):
+class IndexView(generic.TemplateView):
 	template_name ='home/index.html'
+
 
 # this is working fine
 class UserList(generic.ListView):
