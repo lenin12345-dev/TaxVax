@@ -16,8 +16,9 @@ class UserBio(models.Model):
 		return self.username
 
 class UserTaxInfo(models.Model):
-    userbio = models.ForeignKey(UserBio, on_delete=models.CASCADE)
-    total_income = models.IntegerField()
-    total_deductions = models.IntegerField()
-    
-    
+	userbio = models.ForeignKey(UserBio, on_delete=models.CASCADE)
+	total_income = models.IntegerField()
+	total_deductions = models.IntegerField()
+
+	def get_absolute_url(self):
+		return reverse('home:user_detail',  kwargs={'pk': self.pk})

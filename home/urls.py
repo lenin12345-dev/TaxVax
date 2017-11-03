@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^userlist/$', views.UserList.as_view(),name='display_user_list'),
     url(r'^userlist/(?P<pk>[0-9]+)/$',views.UserDetail.as_view(), name='display_user_details'),
     url(r'^client/add/$', views.ClientCreate.as_view(), name='client-create'),
+    url(r'^client/adddetail',views.AddDetail.as_view(),name='add-detail')
 
 ]

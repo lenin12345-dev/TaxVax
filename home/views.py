@@ -33,6 +33,10 @@ class ClientCreate(CreateView):
 	model = UserBio
 	fields = ['username','age','tax_status']
 
+class AddDetail(CreateView):
+	model = UserTaxInfo
+	fields =['userbio','total_income','total_deductions']
+
 # def index(request):
 #     return HttpResponse('hello world')
 # # this is a simple comment added to views
